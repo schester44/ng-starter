@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+  	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  	<title>Starter</title>
+  	<link rel="icon" type="image/x-icon" href="/img/favicon.png">
+  	<base href="/">
+  <style>
+    .sll-inner {
+      width: 170px;
+      text-align: left;
+    }
+    .site-loading {
+      background: rgba(22, 25, 29, 1.0);
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-size: 40px;
+      font-family: 'Gill Sans', Helvetica, Arial, sans-serif;
+      color: rgba(255, 208, 83, 1.0);
+    }
+    .loading:after {
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: bottom;
+      -webkit-animation: ellipsis steps(4,end) 900ms infinite;      
+      animation: ellipsis steps(4,end) 900ms infinite;
+      content: "\2026"; /* ascii code for the ellipsis character */
+      width: 0px;
+    }
+
+    @keyframes ellipsis {
+      to {
+        width: 1.25em;    
+      }
+    }
+
+    @-webkit-keyframes ellipsis {
+      to {
+        width: 1.25em;    
+      }
+    }
+
+  </style>
+</head>
+<body ng-app="app">
+	<div class="app-container" ui-view>
+   <div class="site-loading">
+      <div class="sll-inner">
+        <div class="loading">Loading</div>      
+      </div>
+   </div> 
+  </div>
+</body>
+</html>
